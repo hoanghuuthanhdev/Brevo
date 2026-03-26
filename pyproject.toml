@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "brevooo"
+version = "0.1.0"
+description = ""
+authors = ["huuthanhdev <thanhhuuhoang.sd@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.135.1"
+uvicorn = "^0.42.0"
+python-dotenv = "^1.2.2"
+httpx = "^0.28.1"
+pydantic-settings = "^2.13.1"
+email-validator = "^2.3.0"
+requests = "^2.32.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
