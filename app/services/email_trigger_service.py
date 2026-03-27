@@ -34,7 +34,15 @@ class EmailTriggerService:
             subject=subject,
             htmlContent=html_content
         )
-        return await brevo_service.send_transactional_email(request)
+        print(f"[EmailTriggerService] Sending welcome email to {to_email}...")
+        try:
+            response = await brevo_service.send_transactional_email(request)
+            print(f"[EmailTriggerService] Successfully sent email. MessageId: {response.messageId}")
+            return response
+        except Exception as e:
+            print(f"[EmailTriggerService] Failed to send email: {str(e)}")
+            raise e
+
 
     async def send_api_reminder(self, to_email: str, name: str):
         subject = "Action Required: Connect your API to start trading"
